@@ -1,5 +1,52 @@
 # Qudini Backend Software Engineer Code Test
 
+### Prerequisites
+
+Java 8, Maven 3
+
+### Run/Debug main class
+
+    com.example.webflux.Application
+    
+### Build
+
+    mvn clean package
+
+### Run web app
+
+    cd ./target
+    java -jar webflux-test.jar
+
+
+### REST API
+
+ * Sort customers endpoint
+        
+   
+    POST localhost:8888/v1/customer/sort
+
+Curl example
+    
+    curl -v -X POST --header "Content-Type: application/json" -d '[
+                                                                    {
+                                                                      "id": 10000000,
+                                                                      "name": "Ulysses Leon",
+                                                                      "duetime": "2014-06-18T06:26:56-07:00",
+                                                                      "jointime": "2015-04-08T12:47:16-07:00"
+                                                                    },
+                                                                    {
+                                                                      "id": 10000001,
+                                                                      "name": "Bruce Cardenas",
+                                                                      "duetime": "2013-12-28T14:11:12-08:00",
+                                                                      "jointime": "2014-07-03T21:53:42-07:00"
+                                                                    }]' localhost:8888/v1/customer/sort
+                                                                    
+### Future improvement
+
+Caching sort results can improve performance depending on REST endpoint usage nature  
+
+
+      
 **Please _fork_ this repository rather than creating a PR.**
 
 To test how quickly you can pick up a new project and follow requirements, we ask

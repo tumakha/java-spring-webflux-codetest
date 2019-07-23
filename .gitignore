@@ -1,4 +1,25 @@
 mvn*
-target
+target/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
 *.iml
 *.ipr
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
