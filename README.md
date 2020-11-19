@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-Java 8, Maven 3
+Java 15, Maven 3
 
 ### Run/Debug main class
 
