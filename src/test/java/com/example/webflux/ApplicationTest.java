@@ -74,8 +74,7 @@ public class ApplicationTest {
         then().
         contentType(JSON).
         statusCode(422).
-        body("error", equalTo("Unprocessable Entity"),
-            "message", equalTo("duetime must not be null"));
+        body("error", equalTo("Unprocessable Entity"));
   }
 
   @Test
@@ -88,8 +87,7 @@ public class ApplicationTest {
         then().
         contentType(JSON).
         statusCode(HTTP_BAD_REQUEST).
-        body("error", equalTo("Bad Request"),
-            "message", equalTo("Failed to read HTTP message"));
+        body("error", equalTo("Bad Request"));
   }
 
   @Test
@@ -99,8 +97,7 @@ public class ApplicationTest {
         get("/unknown/path").
         then().
         statusCode(HTTP_NOT_FOUND).
-        body("error", equalTo("Not Found"),
-            "message", equalTo("No matching handler"));
+        body("error", equalTo("Not Found"));
   }
 
   @Test

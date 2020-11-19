@@ -14,6 +14,7 @@ import org.springframework.http.codec.ServerCodecConfigurer.ServerDefaultCodecs;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.web.reactive.config.EnableWebFlux;
+import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
 
@@ -48,6 +49,12 @@ public class WebFluxConfig {
                 ServerDefaultCodecs defaultCodecs = configurer.defaultCodecs();
                 defaultCodecs.jackson2JsonEncoder(new Jackson2JsonEncoder(objectMapper));
                 defaultCodecs.jackson2JsonDecoder(new Jackson2JsonDecoder(objectMapper));
+            }
+
+            @Override
+            public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry.addResourceHandler("/swagger-ui/**")
+                        .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
             }
         };
     }
